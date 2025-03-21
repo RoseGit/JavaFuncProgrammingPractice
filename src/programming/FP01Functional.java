@@ -6,7 +6,14 @@ import java.util.List;
 public class FP01Functional {
 
 	public static void main(String[] args) {
-		printAllNumbersInListFunctional(List.of(12,9,13,4,6,2,4,12,15));
+		
+		
+		List<Integer> numbers = List.of(12,9,13,4,6,2,4,12,15);
+		//excersice 1
+		//printAllNumbersInListFunctional(numbers);
+		
+		//Excersice 2 
+		printEvenNumbersInListFunctional(numbers);
 		
 	}
 
@@ -23,7 +30,16 @@ public class FP01Functional {
 		numbers.stream().forEach(System.out::println);
 	}
 
+	private static void printEvenNumbersInListFunctional(List<Integer> numbers) {
+		
+		numbers.stream().filter(FP01Functional::isEven).forEach(System.out::println)	;
+	}
+	
 	private static void printNumber(int number) {
 		System.out.println(number);
+	}
+	
+	private static boolean isEven(int number) {
+		return number%2 == 0;
 	}
 }
