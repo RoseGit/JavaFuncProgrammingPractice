@@ -31,8 +31,15 @@ public class FP01Functional {
 	}
 
 	private static void printEvenNumbersInListFunctional(List<Integer> numbers) {
+		//Filter only even numbers
+		System.out.println("using filter");
+		numbers.stream().filter(FP01Functional::isEven).forEach(System.out::println);
 		
-		numbers.stream().filter(FP01Functional::isEven).forEach(System.out::println)	;
+		//Using lambda(metodo mas simple de crear y utilizar un metodo ) 
+		System.out.println("using lamda");
+		//condition if number -> number%2==0 is true
+		numbers.stream().filter(number -> number%2==0).forEach(System.out::println);
+		
 	}
 	
 	private static void printNumber(int number) {
