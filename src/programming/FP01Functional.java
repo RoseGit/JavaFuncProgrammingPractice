@@ -15,6 +15,8 @@ public class FP01Functional {
 		//Excersice 2 
 		printEvenNumbersInListFunctional(numbers);
 		
+		//excercise 3 
+		printSquaresOfEvenNumbersInListFunctional(numbers);
 	}
 
 	private static void printAllNumbersInListFunctional(List<Integer> numbers) {
@@ -39,6 +41,15 @@ public class FP01Functional {
 		System.out.println("using lamda");
 		//condition if number -> number%2==0 is true
 		numbers.stream().filter(number -> number%2==0).forEach(System.out::println);
+	}
+	
+	private static void printSquaresOfEvenNumbersInListFunctional(List<Integer> numbers) {
+		System.out.println("using Map expressions");
+		//Map what I do with this element 
+		numbers.stream()
+		.filter(number -> number%2==0)
+		.map(number -> number * number)
+		.forEach(System.out::println);
 		
 	}
 	
